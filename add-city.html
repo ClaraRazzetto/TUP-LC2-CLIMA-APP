@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <title>Clima app</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/add-city.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            <img src="img/android-chrome-192x192.png" alt="favicon clima app">
+            <span>Clima App</span>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Mi App</a></li>
+                <li class="current-page"><a href="#">Ciudad</a></li>
+                <li><a href="help.html">Ayuda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Agregar Ciudad</h2>
+        <section>
+            <form action="">
+                <div class="flex-item">
+                    <label for="InsertarCiudad">Inserte la ciudad a agregar:</label>
+                    <br>
+                    <input type="text" name="InsertarCiudad">
+                </div>
+                <div class="flex-item">
+                    <input type="button" value="Agregar" class="btn">
+                </div>
+                <div class="alert success">
+                    Ciudad agregada con exito
+                </div>
+                <div class="alert danger">
+                    Error: La ciudad ingresada no se encuetra en la API o se produjo un error al consultar 
+                </div>
+                <div class="alert warning">
+                    La ciudad ingresada ya se encuentra almacenada
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Desarrollado con ♥ - LC2
+        </p>
+    </footer>
+</body>
+</html>

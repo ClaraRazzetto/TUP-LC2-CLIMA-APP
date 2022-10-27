@@ -1,0 +1,14 @@
+form .flex-item .input-text{
+    width: 300px;
+}
+
+form .flex-item textarea{
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-radius: 5px;
+}
+
+form .alert{
+    margin-bottom: 10px;
+}

@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root {
+    /* Declaro variables CSS con colores principales */
+    --color-theme: #00594c;
+    --color-active: #5df2d6;
+    --color-back-active: #04957d;
+    --color-gradient: linear-gradient(to right, var(--color-theme),
+            var(--color-back-active));
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button,
+a {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--color-gradient);
+    border-color: var(--color-active);
+    border-bottom-style: solid;
+    border-bottom-right-radius: 20px ;
+    border-bottom-left-radius: 20px ;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+nav li {
+    flex:
+        0 0 auto;
+}
+
+nav li a {
+    display: block;
+    padding: 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-active);
+    border-top-right-radius: 10px ;
+    border-top-left-radius: 10px ;
+}
+
+nav li.current-page a {
+    color: var(--color-theme);
+    background-color: var(--color-active);
+    pointer-events: none;
+}
+
+main {
+    margin-top: 100px;
+    overflow: auto;
+    /* padding: 16px; */
+    padding-bottom: 60px;
+    height: calc(100% - 120px);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    color: white;
+    margin-bottom: 2px;
+}
+
+h1>img {
+    width: 40px;
+    vertical-align: middle;
+    height: 40px;
+}
+
+h2 {
+    color: var(--color-theme);
+    margin: 16px 0;
+    text-align: center;
+}
+
+h3 {
+    color: var(--color-theme);
+    margin: 8px 0;
+}
+
+main section {
+    display: flex;
+    justify-content: space-around;
+}
+
+main section form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3px;  
+}
+
+main section form .flex-item input{
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-radius: 5px;
+    padding: 5px;
+}
+
+main section form .btn{
+    color: white;
+    background-color: var(--color-theme);
+    border-color: var(--color-theme) ;
+    border-style: solid;
+    border-radius: 10px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    width: 100px;
+}
+
+.alert{
+    margin-top: 10px;
+    color: white;
+    border-style: solid;
+    border-radius: 15px;
+    padding: 10px;
+    width: 400px;
+    text-align: center;
+}
+
+
+.warning{
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.danger{
+    background-color:  #dc3545;
+    border-color:  #dc3545;
+}
+
+.success{
+    background-color:#28a745;
+    border-color: #28a745;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    background: var(--color-gradient);
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: var(--color-active);
+    border-top-style: solid;
+}
+
+footer p {
+    font-size: small;
+    color: white;
+}
+
+main p {
+    margin-bottom: 16px;
+}
+
+/* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
+@media (min-width: 400px) {
+    main {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

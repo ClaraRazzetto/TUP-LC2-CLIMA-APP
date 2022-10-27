@@ -1,0 +1,37 @@
+main section#form-city-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main section#form-city-list form{
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;  
+    gap: 3%;
+}
+
+main section#form-city-list form .flex-item select{
+    border-radius: 5px;
+    width: 200px;
+    padding: 5px;    
+}
+
+main #section-weather-result{
+    margin-top: 20px;
+}
+main #section-weather-result .card{
+    text-align: center;
+    box-shadow: 0px 0px 10px 1px #000;
+    border-radius: 30px;
+    box-sizing: border-box;
+    height: 280px;
+    width: 250px;
+    max-width: 250px;
+}
+
+main #section-weather-result .card p{
+    padding-left: 5px;
+    padding-right: 5px;
+}

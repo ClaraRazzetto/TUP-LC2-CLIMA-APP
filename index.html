@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <title>Clima App</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/pages/index.css">
+</head>
+
+<body>
+    <header>
+            <h1>
+                <img src="img/android-chrome-192x192.png" alt="favicon clima app">
+                <span>Clima App</span>
+            </h1>
+            <nav>
+                <ul>
+                    <li class="current-page"><a href="#">Mi App</a></li>
+                    <li><a href="add-city.html">Ciudad</a></li>
+                    <li><a href="help.html">Ayuda</a></li>
+                </ul>
+            </nav>
+    </header>
+    <!-- Contenido principal de la página -->
+    <main>
+        <h2>El Clima Ahora</h2>
+        <section id="form-city-list">
+            <form action="">
+                <div class="flex-item">
+                    <select name="SeleccioarCiudad" id="SeleccionarCiudad" onchange="consultarClima();">
+                        <option selected disabled value>Seleccionar Ciudad</option>
+                    </select>
+                </div>
+                <div class="flex-item">
+                    <input type="button" name="ConsultarCiudad" value="Consultar" class="btn">
+                </div>
+            </form>
+        </section>
+        <section id="section-weather-result">
+           <div class="card">
+                <h3>Rosario</h3>
+                <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="imagen referente al clima actual">
+                <p>
+                    Temperatura: 25.31° 
+                    <br>
+                    Sensación térmica: 24.65°
+                    <br>
+                    Humedad: 29%
+                    <br>
+                    Velocidad del viento: 4.63km/h
+                    <br>
+                    Presión: 1011 P
+                </p>
+           </div>
+        </section>
+    </main>
+    <footer>
+        <p>
+            Desarrollado con ♥ - LC2
+        </p>
+    </footer>
+</body>
+<script src="js/common.js"></script>
+<script src="js/pages/index.js"></script>
+</html>
