@@ -9,6 +9,9 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/index.css">
+    <!-- Script -->
+    <script defer src="js/common.js"></script>
+    <script defer src="js/pages/index.js"></script>
 </head>
 
 <body>
@@ -36,27 +39,22 @@
                     </select>
                 </div>
                 <div class="flex-item">
-                    <input type="button" name="ConsultarCiudad" value="Consultar" class="btn">
+                    <input type="button" name="ConsultarCiudad" id="ConsultarCiudad" value="Consultar" class="btn" onclick="consultarClima();">
                 </div>
             </form>
+            <div class="alert warning" id="alerta">"No hay ciudades cargadas! Si desea agregar una ciudad diríjase a <a href='add-city.html'>Agregar Ciudad</a>";</div>
         </section>
         <section id="section-weather-result">
-           <div class="card">
-                <h3>Rosario</h3>
-                <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="imagen referente al clima actual">
-                <p>
-                    Temperatura: 25.31° 
-                    <br>
-                    Sensación térmica: 24.65°
-                    <br>
-                    Humedad: 29%
-                    <br>
-                    Velocidad del viento: 4.63km/h
-                    <br>
-                    Presión: 1011 P
-                </p>
-           </div>
-        </section>
+            <div class="card" id="mostrarClima">
+                <h3 id="ciudad"></h3>
+                <div id="icono"></div>
+                <div id="temp"></div>
+                <div id="sensacionTermica"></div>
+                <div id="humedad"></div>
+                <div id="velViento"></div>
+                <div id="presion"></div>
+            </div>
+         </section>  
     </main>
     <footer>
         <p>

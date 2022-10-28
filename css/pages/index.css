@@ -20,6 +20,7 @@ main section#form-city-list form .flex-item select{
 
 main #section-weather-result{
     margin-top: 20px;
+    display: none;
 }
 main #section-weather-result .card{
     text-align: center;
@@ -29,6 +30,7 @@ main #section-weather-result .card{
     height: 280px;
     width: 250px;
     max-width: 250px;
+    
 }
 
 main #section-weather-result .card p{

@@ -9,9 +9,12 @@
     <!-- Estilos CSS -->
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/pages/add-city.css">
+    <!-- Scripts -->
+    <script defer src="js/common.js"></script>
+    <script defer src="js/pages/add-city.js"></script>
 </head>
 
-<body>
+<body onload="init();">
     <header>
         <h1>
             <img src="img/android-chrome-192x192.png" alt="favicon clima app">
@@ -33,18 +36,19 @@
                 <div class="flex-item">
                     <label for="InsertarCiudad">Inserte la ciudad a agregar:</label>
                     <br>
-                    <input type="text" name="InsertarCiudad">
+                    <input type="text" name="InsertarCiudad" id="InsertarCiudad">
                 </div>
                 <div class="flex-item">
-                    <input type="button" value="Agregar" class="btn">
+                    <input type="button" value="Agregar" class="btn" id="agregarCiudad">
+                    <input type="button" value="Borrar" class="btn" id="eliminarCiudades">
                 </div>
-                <div class="alert success">
+                <div class="alert success" id="success">
                     Ciudad agregada con exito
                 </div>
-                <div class="alert danger">
-                    Error: La ciudad ingresada no se encuetra en la API o se produjo un error al consultar 
+                <div class="alert danger" id="danger">
+                    Error: La ciudad ingresada no se pudo ser almacenada
                 </div>
-                <div class="alert warning">
+                <div class="alert warning" id="warning">
                     La ciudad ingresada ya se encuentra almacenada
                 </div>
             </form>
