@@ -14,7 +14,7 @@
     <script defer src="js/pages/help.js"></script>
 </head>
 
-<body>
+<body onload="init();">
     <header>
         <h1>
             <img src="img/android-chrome-192x192.png" alt="favicon clima app">
@@ -42,17 +42,17 @@
                 <div class="flex-item">
                     <label for="Nombre">Nombre</label>
                     <br>
-                    <input type="text" name="Nombre" id="Nombre" class="input-text">
+                    <input type="text" name="Nombre" id="Nombre" class="input-text" required>
                 </div>
                 <div class="flex-item">
                     <label for="Email">Email</label>
                     <br>
-                    <input type="email" name="Email" id="Email" class="input-text">
+                    <input type="email" name="Email" id="Email" class="input-text" required>
                 </div>
                 <div class="flex-item">
                     <label for="Mensaje">Mensaje</label>
                     <br>
-                    <textarea name="Mensaje" id="Mensaje" cols="30" rows="10" class="input-text"></textarea>
+                    <textarea name="Mensaje" id="Mensaje" cols="30" rows="10" class="input-text" required></textarea>
                 </div>
                 <div class="flex-item">
                     <input type="button" name="Limpiar" id="Limpiar" value="Limpiar" class="btn">
