@@ -6,8 +6,8 @@ main section form .flex-item input#Ciudad{
     width: 100%;
 }
 
-
-
-
+.loader {
+    margin-top: 5px;
+}
 
 

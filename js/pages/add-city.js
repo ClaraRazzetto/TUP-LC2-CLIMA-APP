@@ -8,23 +8,43 @@ function init(){
     let warning = document.getElementById("warning"); // alerta la ciudad ya se encuentra almacenada
 
 
-    agregarCiudad.onclick = function (e){
-        
+    agregarCiudad.onclick = function (e) {
+
         ocultarAlerta(); //oculto las alertas
 
-        let newCity = formatearString(nuevaCiudad.value); 
+        let newCity = nuevaCiudad.value;
         
-        if(validarCiudadEnLocalStorage(newCity)){ //valido que la ciudad no se encuentra almacenada
-            
-            try{
-                addNewCityToLocalStorage(newCity); //agrego la ciudad al localStorage
-                mostrar(success); //muestro alerta: ciudad almacenada con exito
-            } catch {
-                mostrar(danger); //muestro alerta: error al cargar la ciudad
-            }
+        //valido que se haya completado el campo 
+        if (newCity != ""){
+        
+            newCity = formatearString(newCity); 
 
+            //Verifico si la ciudad se encuentra almacenada
+            if(validarCiudadEnLocalStorage(newCity)){ 
+                
+                // llamo a la API para verificar que la ciudad ingresada retorna una respuesta
+                consultarAPI(newCity).then(() => {
+                    try{
+                        addNewCityToLocalStorage(newCity); //agrego la ciudad al localStorage
+                        mostrar(success); //muestro alerta: ciudad almacenada con exito
+                    } catch {
+                        mostrar(danger); //muestro alerta: error al cargar la ciudad
+                        danger.innerHTML = " Error: La ciudad ingresada no se pudo ser almacenada"
+                    }  
+                }).catch(() => {
+                    mostrar(danger); 
+                    danger.innerHTML= "Error: La ciudad ingresada no se encontró en los registros del clima";
+                }).finally(()=> {
+                    document.getElementById("loader").style.display = "none";
+                });
+
+            } else {
+                mostrar(warning); //muestro alerta: la ciudad ya se encuentra almacenada
+                warning.innerHTML = "La ciudad ingresada ya se encuentra almacenada";
+            }
         } else {
-            mostrar(warning); //muestro alerta: la ciudad ya se encuentra almacenada
+            mostrar(warning); 
+            warning.innerHTML = "Debe completar el campo ciudad";
         }
     }
 
@@ -43,6 +63,7 @@ function addNewCityToLocalStorage(newCity) {
     localStorage.setItem('CITIES', JSON.stringify(cities));
     console.log(cities);
 }
+
 
 // Devuelvo la ciudad ingresada con la primera letra en mayuscula y el resto en minuscula
 function formatearString(newCity){

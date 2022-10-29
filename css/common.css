@@ -137,6 +137,21 @@ main section form .btn{
     width: 100px;
 }
 
+.loader {
+    border: 12px solid #f3f3f3; /* Light grey */
+    border-top: 12px solid var(--color-theme); /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .alert{
     margin-top: 10px;
     color: white;
@@ -147,7 +162,6 @@ main section form .btn{
     text-align: center;
     display: none;
 }
-
 
 .warning{
     background-color: #ffc107;

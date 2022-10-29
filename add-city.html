@@ -36,7 +36,7 @@
                 <div class="flex-item">
                     <label for="InsertarCiudad">Inserte la ciudad a agregar:</label>
                     <br>
-                    <input type="text" name="InsertarCiudad" id="InsertarCiudad">
+                    <input type="text" name="InsertarCiudad" id="InsertarCiudad" required>
                 </div>
                 <div class="flex-item">
                     <input type="button" value="Agregar" class="btn" id="agregarCiudad">
@@ -45,12 +45,9 @@
                 <div class="alert success" id="success">
                     Ciudad agregada con exito
                 </div>
-                <div class="alert danger" id="danger">
-                    Error: La ciudad ingresada no se pudo ser almacenada
-                </div>
-                <div class="alert warning" id="warning">
-                    La ciudad ingresada ya se encuentra almacenada
-                </div>
+                <div class="alert danger" id="danger"></div>
+                <div class="alert warning" id="warning"></div>
+                <div class="loader" id="loader"></div>
             </form>
         </section>
     </main>
